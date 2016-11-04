@@ -1,15 +1,17 @@
 #toolbox {
     position: absolute;
     left: 0%;
-    top: 0%
-    botton: 25%
-    right: 75%
+    top: 0%;
+    botton: 25%;
+    right: 75%;
+    backround: #808080;
 }
 
 #options {
     position: absolute;
     left: 0%;
-    top: 75%
-    botton: 0%
-    right: 75%
+    top: 75%;
+    botton: 0%;
+    right: 75%;
+    backround: #C0C0C0;
 }
