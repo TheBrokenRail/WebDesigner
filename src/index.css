@@ -4,7 +4,7 @@
     top: 0%;
     botton: 25%;
     right: 75%;
-    backround: #808080;
+    backround-color: #808080;
 }
 
 #options {
@@ -13,5 +13,5 @@
     top: 75%;
     botton: 0%;
     right: 75%;
-    backround: #C0C0C0;
+    backround-color: #C0C0C0;
 }
