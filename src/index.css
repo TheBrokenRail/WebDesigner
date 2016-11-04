@@ -1,0 +1,15 @@
+#toolbox {
+    position: absolute;
+    left: 0%;
+    top: 0%
+    botton: 25%
+    right: 75%
+}
+
+#options {
+    position: absolute;
+    left: 0%;
+    top: 75%
+    botton: 0%
+    right: 75%
+}
