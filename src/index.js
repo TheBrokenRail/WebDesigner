@@ -1,3 +1,4 @@
+var site = [];
 function WebObject() {
     this.type = null;
     this.data = [];
@@ -14,6 +15,7 @@ function add(type) {
                 obj.type = 0;
                 obj.data[0] = text.value;
                 document.getElementById("options").innerHTML = "";
+                site.push(obj);
             }
     }
     var exit = document.getElementById("exit");
@@ -21,4 +23,3 @@ function add(type) {
         document.getElementById("options").innerHTML = "";
     }
 }
-var site = [];
