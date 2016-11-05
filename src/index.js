@@ -86,7 +86,7 @@ function render() {
                 break;
             case 3:
                 var input = document.createElement("INPUT");
-                input.innerHTML = site[i].data[0];
+                input.value = site[i].data[0];
                 input.id = site[i].data[1];
                 eval("input.onclick = function() {edit(" + i + ")};");
                 preview.appendChild(input);
