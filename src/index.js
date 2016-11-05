@@ -68,19 +68,15 @@ function edit(num) {
     };
     var up = document.getElementById("up");
     up.onclick = function() {
-        if (num < site.length - 1) {
-            var obj = site[num];
-            site.splice(num, 1);
-            site.splice(num, 0, obj);
+        if (num > 0) {
+            site.splice(num - 1, 0, site.splice(num, 1)[0]);
             render();
         }
     };
     var down = document.getElementById("down");
     down.onclick = function() {
-        if (num > 0) {
-            var obj = site[num];
-            site.splice(num, 1);
-            site.splice(num - 1, 0, obj);
+        if (num + 1 < site.length) {
+            site.splice(num + 1, 0, site.splice(num, 1)[0]);
             render();
         }
     };
