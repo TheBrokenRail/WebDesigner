@@ -15,3 +15,11 @@
     width: 25%;
     background-color: #C0C0C0;
 }
+
+#preview {
+    position: absolute;
+    left: 25%;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+}
