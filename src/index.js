@@ -41,6 +41,20 @@ function edit(num) {
                 render();
             }
             break;
+        case 3:
+            options.innerHTML = "<p>Default Text: </p><input id=\"text\"></input><br><p>ID: </p><input id=\"id\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button>";
+            var save = document.getElementById("save");
+            var text = document.getElementById("text");
+            text.value = site[num].data[0];
+            var id = document.getElementById("id");
+            id.value = site[num].data[1];
+            save.onclick = function() {
+                site[num].data[0] = text.value;
+                site[num].data[1] = id.value;
+                document.getElementById("options").innerHTML = "";
+                render();
+            }
+            break;
     }
     var exit = document.getElementById("exit");
     exit.onclick = function() {
@@ -69,6 +83,13 @@ function render() {
                 img.src = site[i].data[0];
                 eval("img.onclick = function() {edit(" + i + ")};");
                 preview.appendChild(img);
+                break;
+            case 3:
+                var input = document.createElement("INPUT");
+                input.innerHTML = site[i].data[0];
+                input.id = site[i].data[1];
+                eval("input.onclick = function() {edit(" + i + ")};");
+                preview.appendChild(button);
                 break;
         }
     }
@@ -112,6 +133,21 @@ function add(type) {
                 var obj = new WebObject();
                 obj.type = 2;
                 obj.data[0] = text.value;
+                document.getElementById("options").innerHTML = "";
+                site.push(obj);
+                render();
+            }
+            break;
+        case 3:
+            options.innerHTML = "<p>Default Text: </p><input id=\"text\"></input><br><p>ID: </p><input id=\"id\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
+            var add = document.getElementById("add");
+            add.onclick = function() {
+                var text = document.getElementById("text");
+                var id = document.getElementById("id");
+                var obj = new WebObject();
+                obj.type = 3;
+                obj.data[0] = text.value;
+                obj.data[1] = id.value;
                 document.getElementById("options").innerHTML = "";
                 site.push(obj);
                 render();
