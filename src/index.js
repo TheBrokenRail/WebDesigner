@@ -69,7 +69,7 @@ function edit(num) {
     var up = document.getElementById("up");
     up.onclick = function() {
         if (num < site.length - 1) {
-            var oby = site[num];
+            var obj = site[num];
             site.splice(num, 1);
             site.splice(num, 0, obj);
             render();
@@ -78,7 +78,7 @@ function edit(num) {
     var down = document.getElementById("down");
     down.onclick = function() {
         if (num > 0) {
-            var oby = site[num];
+            var obj = site[num];
             site.splice(num, 1);
             site.splice(num - 1, 0, obj);
             render();
