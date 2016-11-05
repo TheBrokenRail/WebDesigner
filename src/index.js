@@ -13,15 +13,18 @@ function render() {
                 text.innerHTML = site[i].data[0];
                 eval("text.onclick = function() {edit(" + i + ")};");
                 preview.appendChild(text);
+                break;
             case 1:
                 var button = document.createElement("BUTTON");
-                text.innerHTML = site[i].data[0];
+                button.innerHTML = site[i].data[0];
                 eval("button.onclick = function() {edit(" + i + ")};");
                 preview.appendChild(button);
+                break;
             case 2:
                 var nl = document.createElement("BR");
                 eval("nl.onclick = function() {edit(" + i + ")};");
                 preview.appendChild(nl);
+                break;
         }
     }
 }
