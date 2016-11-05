@@ -20,11 +20,6 @@ function render() {
                 eval("button.onclick = function() {edit(" + i + ")};");
                 preview.appendChild(button);
                 break;
-            case 2:
-                var nl = document.createElement("BR");
-                eval("nl.onclick = function() {edit(" + i + ")};");
-                preview.appendChild(nl);
-                break;
         }
     }
 }
@@ -41,6 +36,7 @@ function add(type) {
                 obj.data[0] = text.value;
                 document.getElementById("options").innerHTML = "";
                 site.push(obj);
+                render();
             }
             break;
         case 1:
@@ -55,18 +51,12 @@ function add(type) {
                 obj.data[1] = js.value;
                 document.getElementById("options").innerHTML = "";
                 site.push(obj);
+                render();
             }
-            break;
-        case 2:
-            var obj = new WebObject();
-            obj.type = 2;
-            document.getElementById("options").innerHTML = "";
-            site.push(obj);
             break;
     }
     var exit = document.getElementById("exit");
     exit.onclick = function() {
         document.getElementById("options").innerHTML = "";
     };
-    render();
 }
