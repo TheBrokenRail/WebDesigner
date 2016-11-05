@@ -4,7 +4,7 @@ function WebObject() {
     this.data = [];
 }
 function render() {
-    var preview = document.getElemenyById("preview");
+    var preview = document.getElementById("preview");
     for (var i = 0; i < site.length; i++) {
         switch(site[i].type) {
             case 0:
