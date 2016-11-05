@@ -89,7 +89,7 @@ function render() {
                 input.innerHTML = site[i].data[0];
                 input.id = site[i].data[1];
                 eval("input.onclick = function() {edit(" + i + ")};");
-                preview.appendChild(button);
+                preview.appendChild(input);
                 break;
         }
     }
