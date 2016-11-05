@@ -3,6 +3,18 @@ function WebObject() {
     this.type = null;
     this.data = [];
 }
+function render() {
+    var preview = document.getElemenyById("preview");
+    for (var i = 0; i < site.length; i++) {
+        switch(site[i].type) {
+            case 0:
+                var text = document.createElement("P");
+                text.innerHTML = size[0].data[0];
+                eval("text.onclick = function() {edit(i)};");
+                preview.appendChild(text);
+        }
+    }
+}
 function add(type) {
     var options = document.getElementById("options");
     switch(type) {
@@ -35,4 +47,5 @@ function add(type) {
     exit.onclick = function() {
         document.getElementById("options").innerHTML = "";
     }
+    render();
 }
