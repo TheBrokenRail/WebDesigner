@@ -71,6 +71,7 @@ function edit(num) {
         if (num > 0) {
             site.splice(num - 1, 0, site.splice(num, 1)[0]);
             render();
+            num = num - 1;
         }
     };
     var down = document.getElementById("down");
@@ -78,6 +79,7 @@ function edit(num) {
         if (num + 1 < site.length) {
             site.splice(num + 1, 0, site.splice(num, 1)[0]);
             render();
+            num = num + 1;
         }
     };
 }
