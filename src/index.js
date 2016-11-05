@@ -5,11 +5,12 @@ function WebObject() {
 }
 function render() {
     var preview = document.getElementById("preview");
+    preview.innerHTML = "";
     for (var i = 0; i < site.length; i++) {
         switch(site[i].type) {
             case 0:
                 var text = document.createElement("P");
-                text.innerHTML = site[0].data[0];
+                text.innerHTML = site[i].data[0];
                 eval("text.onclick = function() {edit(i)};");
                 preview.appendChild(text);
         }
