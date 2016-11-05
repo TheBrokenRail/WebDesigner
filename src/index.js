@@ -63,6 +63,8 @@ function edit(num) {
     var deleteObj = document.getElementById("delete");
     deleteObj.onclick = function() {
         site[num] = null;
+        render();
+        document.getElementById("options").innerHTML = "";
     };
 }
 function render() {
