@@ -6,7 +6,7 @@ function WebObject() {
 function edit(num) {
     switch(site[num].type) {
         case 0:
-            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button>";
+            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button>";
             var save = document.getElementById("save");
             var text = document.getElementById("text");
             text.value = site[num].data[0];
@@ -17,7 +17,7 @@ function edit(num) {
             }
             break;
         case 1:
-            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Action (JS): </p><input id=\"js\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button>";
+            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Action (JS): </p><input id=\"js\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button>";
             var save = document.getElementById("save");
             var text = document.getElementById("text");
             text.value = site[num].data[0];
@@ -31,7 +31,7 @@ function edit(num) {
             }
             break;
         case 2:
-            options.innerHTML = "<p>Source: </p><input id=\"text\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button>";
+            options.innerHTML = "<p>Source: </p><input id=\"text\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button>";
             var save = document.getElementById("save");
             var text = document.getElementById("text");
             text.value = site[num].data[0];
@@ -42,7 +42,7 @@ function edit(num) {
             }
             break;
         case 3:
-            options.innerHTML = "<p>Default Text: </p><input id=\"text\"></input><br><p>ID: </p><input id=\"id\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button>";
+            options.innerHTML = "<p>Default Text: </p><input id=\"text\"></input><br><p>ID: </p><input id=\"id\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button>";
             var save = document.getElementById("save");
             var text = document.getElementById("text");
             text.value = site[num].data[0];
@@ -60,11 +60,16 @@ function edit(num) {
     exit.onclick = function() {
         document.getElementById("options").innerHTML = "";
     };
+    var deleteObj = document.getElementById("delete");
+    deleteObj.onclick = function() {
+        site[num] = null;
+    };
 }
 function render() {
     var preview = document.getElementById("preview");
     preview.innerHTML = "";
     for (var i = 0; i < site.length; i++) {
+        if (site[i] == null) {continue;}
         switch(site[i].type) {
             case 0:
                 var text = document.createElement("P");
