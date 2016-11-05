@@ -29,6 +29,7 @@ function add(type) {
                 document.getElementById("options").innerHTML = "";
                 site.push(obj);
             }
+            break;
         case 1:
             options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Action (JS): </p><input id=\"js\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
             var add = document.getElementById("add");
@@ -42,6 +43,7 @@ function add(type) {
                 document.getElementById("options").innerHTML = "";
                 site.push(obj);
             }
+            break;
     }
     var exit = document.getElementById("exit");
     exit.onclick = function() {
