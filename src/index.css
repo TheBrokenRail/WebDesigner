@@ -2,16 +2,16 @@
     position: absolute;
     left: 0%;
     top: 0%;
-    botton: 25%;
-    right: 75%;
-    backround-color: #808080;
+    height: 75%;
+    width: 25%;
+    background-color: #808080;
 }
 
 #options {
     position: absolute;
     left: 0%;
     top: 75%;
-    botton: 0%;
-    right: 75%;
-    backround-color: #C0C0C0;
+    height: 25%;
+    width: 25%;
+    background-color: #C0C0C0;
 }
