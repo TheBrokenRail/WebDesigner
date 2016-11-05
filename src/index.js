@@ -30,7 +30,7 @@ function edit(num) {
                 render();
             }
             break;
-        case 0:
+        case 2:
             options.innerHTML = "<p>Source: </p><input id=\"text\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button>";
             var save = document.getElementById("save");
             var text = document.getElementById("text");
@@ -64,7 +64,7 @@ function render() {
                 eval("button.onclick = function() {edit(" + i + ")};");
                 preview.appendChild(button);
                 break;
-            case 3:
+            case 2:
                 var img = document.createElement("IMG");
                 img.src = site[i].data[0];
                 eval("img.onclick = function() {edit(" + i + ")};");
