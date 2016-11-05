@@ -3,6 +3,9 @@ function WebObject() {
     this.data = [];
 }
 function add(type) {
-    switch(type) {}
+    switch(type) {
+        case 0:
+            console.log("text");
+    }
 }
 var site = [];
