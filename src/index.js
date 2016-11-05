@@ -9,7 +9,7 @@ function render() {
         switch(site[i].type) {
             case 0:
                 var text = document.createElement("P");
-                text.innerHTML = size[0].data[0];
+                text.innerHTML = site[0].data[0];
                 eval("text.onclick = function() {edit(i)};");
                 preview.appendChild(text);
         }
