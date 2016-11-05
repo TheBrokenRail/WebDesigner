@@ -11,8 +11,17 @@ function render() {
             case 0:
                 var text = document.createElement("P");
                 text.innerHTML = site[i].data[0];
-                eval("text.onclick = function() {edit(i)};");
+                eval("text.onclick = function() {edit(" + i + ")};");
                 preview.appendChild(text);
+            case 1:
+                var button = document.createElement("BUTTON");
+                text.innerHTML = site[i].data[0];
+                eval("button.onclick = function() {edit(" + i + ")};");
+                preview.appendChild(button);
+            case 2:
+                var nl = document.createElement("BR");
+                eval("nl.onclick = function() {edit(" + i + ")};");
+                preview.appendChild(nl);
         }
     }
 }
@@ -45,10 +54,16 @@ function add(type) {
                 site.push(obj);
             }
             break;
+        case 2:
+            var obj = new WebObject();
+            obj.type = 2;
+            document.getElementById("options").innerHTML = "";
+            site.push(obj);
+            break;
     }
     var exit = document.getElementById("exit");
     exit.onclick = function() {
         document.getElementById("options").innerHTML = "";
-    }
+    };
     render();
 }
