@@ -27,6 +27,7 @@ function edit(num) {
                 render();
             }
             break;
+    }
     var exit = document.getElementById("exit");
     exit.onclick = function() {
         document.getElementById("options").innerHTML = "";
