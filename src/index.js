@@ -3,6 +3,35 @@ function WebObject() {
     this.type = null;
     this.data = [];
 }
+function edit(num) {
+    switch(site[num].type) {
+        case 0:
+            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button>";
+            var save = document.getElementById("save");
+            save.onclick = function() {
+                var text = document.getElementById("text");
+                site[num].data[0] = text.value;
+                document.getElementById("options").innerHTML = "";
+                render();
+            }
+            break;
+        case 1:
+            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Action (JS): </p><input id=\"js\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button>";
+            var save = document.getElementById("save");
+            save.onclick = function() {
+                var text = document.getElementById("text");
+                var js = document.getElementById("js");
+                site[num].data[0] = text.value;
+                site[num].data[1] = js.value;
+                document.getElementById("options").innerHTML = "";
+                render();
+            }
+            break;
+    var exit = document.getElementById("exit");
+    exit.onclick = function() {
+        document.getElementById("options").innerHTML = "";
+    };
+}
 function render() {
     var preview = document.getElementById("preview");
     preview.innerHTML = "";
