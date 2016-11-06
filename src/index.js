@@ -6,7 +6,7 @@ function WebObject() {
 function edit(num) {
     switch(site[num].type) {
         case 0:
-            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>CSS: </p><input id=\"caa\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button><button id=\"up\">Up</button><button id=\"down\">Down</button>";
+            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>CSS: </p><input id=\"css\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button><button id=\"up\">Up</button><button id=\"down\">Down</button>";
             var save = document.getElementById("save");
             var text = document.getElementById("text");
             text.value = site[num].data[0];
@@ -20,7 +20,7 @@ function edit(num) {
             }
             break;
         case 1:
-            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Action (JS): </p><input id=\"js\"></input><br><p>CSS: </p><input id=\"caa\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button><button id=\"up\">Up</button><button id=\"down\">Down</button>";
+            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Action (JS): </p><input id=\"js\"></input><br><p>CSS: </p><input id=\"css\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button><button id=\"up\">Up</button><button id=\"down\">Down</button>";
             var save = document.getElementById("save");
             var text = document.getElementById("text");
             text.value = site[num].data[0];
@@ -37,7 +37,7 @@ function edit(num) {
             }
             break;
         case 2:
-            options.innerHTML = "<p>Source: </p><input id=\"text\"></input><br><p>CSS: </p><input id=\"caa\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button><button id=\"up\">Up</button><button id=\"down\">Down</button>";
+            options.innerHTML = "<p>Source: </p><input id=\"text\"></input><br><p>CSS: </p><input id=\"css\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button><button id=\"up\">Up</button><button id=\"down\">Down</button>";
             var save = document.getElementById("save");
             var text = document.getElementById("text");
             text.value = site[num].data[0];
@@ -51,7 +51,7 @@ function edit(num) {
             }
             break;
         case 3:
-            options.innerHTML = "<p>Default Text: </p><input id=\"text\"></input><br><p>ID: </p><input id=\"id\"></input><br><p>CSS: </p><input id=\"caa\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button><button id=\"up\">Up</button><button id=\"down\">Down</button>";
+            options.innerHTML = "<p>Default Text: </p><input id=\"text\"></input><br><p>ID: </p><input id=\"id\"></input><br><p>CSS: </p><input id=\"css\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button><button id=\"up\">Up</button><button id=\"down\">Down</button>";
             var save = document.getElementById("save");
             var text = document.getElementById("text");
             text.value = site[num].data[0];
@@ -68,7 +68,7 @@ function edit(num) {
             }
             break;
         case 4:
-            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Link: </p><input id=\"link\"></input><br><p>CSS: </p><input id=\"caa\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button><button id=\"up\">Up</button><button id=\"down\">Down</button>";
+            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Link: </p><input id=\"link\"></input><br><p>CSS: </p><input id=\"css\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button><button id=\"up\">Up</button><button id=\"down\">Down</button>";
             var save = document.getElementById("save");
             var text = document.getElementById("text");
             text.value = site[num].data[0];
@@ -176,7 +176,7 @@ function add(type) {
     var options = document.getElementById("options");
     switch(type) {
         case 0:
-            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>CSS: </p><input id=\"caa\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
+            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>CSS: </p><input id=\"css\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
             var add = document.getElementById("add");
             add.onclick = function() {
                 var text = document.getElementById("text");
@@ -191,7 +191,7 @@ function add(type) {
             }
             break;
         case 1:
-            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Action (JS): </p><input id=\"js\"></input><br><p>CSS: </p><input id=\"caa\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
+            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Action (JS): </p><input id=\"js\"></input><br><p>CSS: </p><input id=\"css\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
             var add = document.getElementById("add");
             add.onclick = function() {
                 var text = document.getElementById("text");
@@ -208,7 +208,7 @@ function add(type) {
             }
             break;
         case 2:
-            options.innerHTML = "<p>Source: </p><input id=\"text\"></input><br><p>CSS: </p><input id=\"caa\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
+            options.innerHTML = "<p>Source: </p><input id=\"text\"></input><br><p>CSS: </p><input id=\"css\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
             var add = document.getElementById("add");
             add.onclick = function() {
                 var text = document.getElementById("text");
@@ -223,7 +223,7 @@ function add(type) {
             }
             break;
         case 3:
-            options.innerHTML = "<p>Default Text: </p><input id=\"text\"></input><br><p>ID: </p><input id=\"id\"></input><br><p>CSS: </p><input id=\"caa\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
+            options.innerHTML = "<p>Default Text: </p><input id=\"text\"></input><br><p>ID: </p><input id=\"id\"></input><br><p>CSS: </p><input id=\"css\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
             var add = document.getElementById("add");
             add.onclick = function() {
                 var text = document.getElementById("text");
@@ -240,7 +240,7 @@ function add(type) {
             }
             break;
         case 4:
-            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Link: </p><input id=\"link\"></input><br><p>CSS: </p><input id=\"caa\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
+            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Link: </p><input id=\"link\"></input><br><p>CSS: </p><input id=\"css\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
             var add = document.getElementById("add");
             add.onclick = function() {
                 var text = document.getElementById("text");
