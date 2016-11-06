@@ -13,7 +13,7 @@ function edit(num) {
             save.onclick = function() {
                 site[num].data[0] = text.value;
                 document.getElementById("options").innerHTML = "";
-                render();
+                render(false);
             }
             break;
         case 1:
@@ -27,7 +27,7 @@ function edit(num) {
                 site[num].data[0] = text.value;
                 site[num].data[1] = js.value;
                 document.getElementById("options").innerHTML = "";
-                render();
+                render(false);
             }
             break;
         case 2:
@@ -38,7 +38,7 @@ function edit(num) {
             save.onclick = function() {
                 site[num].data[0] = text.value;
                 document.getElementById("options").innerHTML = "";
-                render();
+                render(false);
             }
             break;
         case 3:
@@ -52,7 +52,7 @@ function edit(num) {
                 site[num].data[0] = text.value;
                 site[num].data[1] = id.value;
                 document.getElementById("options").innerHTML = "";
-                render();
+                render(false);
             }
             break;
     }
@@ -63,14 +63,14 @@ function edit(num) {
     var deleteObj = document.getElementById("delete");
     deleteObj.onclick = function() {
         site.splice(num, 1);
-        render();
+        render(false);
         document.getElementById("options").innerHTML = "";
     };
     var up = document.getElementById("up");
     up.onclick = function() {
         if (num > 0) {
             site.splice(num - 1, 0, site.splice(num, 1)[0]);
-            render();
+            render(false);
             num = num - 1;
         }
     };
@@ -78,12 +78,12 @@ function edit(num) {
     down.onclick = function() {
         if (num + 1 < site.length) {
             site.splice(num + 1, 0, site.splice(num, 1)[0]);
-            render();
+            render(false);
             num = num + 1;
         }
     };
 }
-function render() {
+function render(real) {
     var preview = document.getElementById("preview");
     preview.innerHTML = "";
     for (var i = 0; i < site.length; i++) {
@@ -92,26 +92,36 @@ function render() {
             case 0:
                 var text = document.createElement("P");
                 text.innerHTML = site[i].data[0];
-                eval("text.onclick = function() {edit(" + i + ")};");
+                if (!real) {
+                    text.setAttribute("onclick","edit(" + i + ");");
+                }
                 preview.appendChild(text);
                 break;
             case 1:
                 var button = document.createElement("BUTTON");
                 button.innerHTML = site[i].data[0];
-                eval("button.onclick = function() {edit(" + i + ")};");
+                if (!real) {
+                    button.setAttribute("onclick","edit(" + i + ");");
+                } else {
+                    button.setAttribute("onclick",site[i].data[1]);
+                }
                 preview.appendChild(button);
                 break;
             case 2:
                 var img = document.createElement("IMG");
                 img.src = site[i].data[0];
-                eval("img.onclick = function() {edit(" + i + ")};");
+                if (!real) {
+                    img.setAttribute("onclick","edit(" + i + ");");
+                }
                 preview.appendChild(img);
                 break;
             case 3:
                 var input = document.createElement("INPUT");
                 input.value = site[i].data[0];
                 input.id = site[i].data[1];
-                eval("input.onclick = function() {edit(" + i + ")};");
+                if (!real) {
+                    input.setAttribute("onclick","edit(" + i + ");");
+                }
                 preview.appendChild(input);
                 break;
         }
@@ -130,7 +140,7 @@ function add(type) {
                 obj.data[0] = text.value;
                 document.getElementById("options").innerHTML = "";
                 site.push(obj);
-                render();
+                render(false);
             }
             break;
         case 1:
@@ -145,7 +155,7 @@ function add(type) {
                 obj.data[1] = js.value;
                 document.getElementById("options").innerHTML = "";
                 site.push(obj);
-                render();
+                render(false);
             }
             break;
         case 2:
@@ -158,7 +168,7 @@ function add(type) {
                 obj.data[0] = text.value;
                 document.getElementById("options").innerHTML = "";
                 site.push(obj);
-                render();
+                render(false);
             }
             break;
         case 3:
@@ -173,7 +183,7 @@ function add(type) {
                 obj.data[1] = id.value;
                 document.getElementById("options").innerHTML = "";
                 site.push(obj);
-                render();
+                render(false);
             }
             break;
     }
