@@ -55,6 +55,20 @@ function edit(num) {
                 render(false);
             }
             break;
+        case 4:
+            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Link: </p><input id=\"link\"></input><br><button id=\"save\">Save</button><button id=\"exit\">Exit</button><button id=\"delete\">Delete</button><button id=\"up\">Up</button><button id=\"down\">Down</button>";
+            var save = document.getElementById("save");
+            var text = document.getElementById("text");
+            text.value = site[num].data[0];
+            var link = document.getElementById("link");
+            link.value = site[num].data[1];
+            save.onclick = function() {
+                site[num].data[0] = text.value;
+                site[num].data[1] = link.value;
+                document.getElementById("options").innerHTML = "";
+                render(false);
+            }
+            break;
     }
     var exit = document.getElementById("exit");
     exit.onclick = function() {
@@ -124,6 +138,16 @@ function render(real) {
                 }
                 preview.appendChild(input);
                 break;
+            case 4:
+                var link = document.createElement("A");
+                link.innerHTML = site[i].data[0];
+                if (!real) {
+                    button.setAttribute("onclick","edit(" + i + ");");
+                } else {
+                    button.setAttribute("href",site[i].data[1]);
+                }
+                preview.appendChild(button);
+                break;
         }
     }
 }
@@ -186,9 +210,31 @@ function add(type) {
                 render(false);
             }
             break;
+        case 4:
+            options.innerHTML = "<p>Text: </p><input id=\"text\"></input><br><p>Link: </p><input id=\"link\"></input><br><button id=\"add\">Add</button><button id=\"exit\">Exit</button>";
+            var add = document.getElementById("add");
+            add.onclick = function() {
+                var text = document.getElementById("text");
+                var link = document.getElementById("link");
+                var obj = new WebObject();
+                obj.type = 4;
+                obj.data[0] = text.value;
+                obj.data[1] = link.value;
+                document.getElementById("options").innerHTML = "";
+                site.push(obj);
+                render(false);
+            }
+            break;
     }
     var exit = document.getElementById("exit");
     exit.onclick = function() {
         document.getElementById("options").innerHTML = "";
     };
+}
+
+function exportToHTML() {
+    render(true);
+    var html = document.getElementById("preview");
+    render(false);
+    return html;
 }
