@@ -92,7 +92,7 @@ function render() {
             case 0:
                 var text = document.createElement("P");
                 text.innerHTML = site[i].data[0];
-                eval("text.onclick = onclick(event) {edit(" + i + ")};");
+                eval("text.onclick = function onclick(event) {edit(" + i + ")};");
                 preview.appendChild(text);
                 break;
             case 1:
