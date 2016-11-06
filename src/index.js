@@ -234,7 +234,7 @@ function add(type) {
 
 function exportToHTML() {
     render(true);
-    var html = document.getElementById("preview");
+    var html = document.getElementById("preview").innerHTML;
     render(false);
     return html;
 }
