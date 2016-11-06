@@ -124,7 +124,7 @@ function render(real) {
                 if (!real) {
                     text.setAttribute("onclick","edit(" + i + ");");
                 }
-                link.setAttribute("style",site[i].data[1]);
+                text.setAttribute("style",site[i].data[1]);
                 preview.appendChild(text);
                 break;
             case 1:
@@ -135,7 +135,7 @@ function render(real) {
                 } else {
                     button.setAttribute("onclick",site[i].data[1]);
                 }
-                link.setAttribute("style",site[i].data[2]);
+                button.setAttribute("style",site[i].data[2]);
                 preview.appendChild(button);
                 break;
             case 2:
@@ -144,7 +144,7 @@ function render(real) {
                 if (!real) {
                     img.setAttribute("onclick","edit(" + i + ");");
                 }
-                link.setAttribute("style",site[i].data[1]);
+                img.setAttribute("style",site[i].data[1]);
                 preview.appendChild(img);
                 break;
             case 3:
@@ -154,7 +154,7 @@ function render(real) {
                 if (!real) {
                     input.setAttribute("onclick","edit(" + i + ");");
                 }
-                link.setAttribute("style",site[i].data[2]);
+                input.setAttribute("style",site[i].data[2]);
                 preview.appendChild(input);
                 break;
             case 4:
