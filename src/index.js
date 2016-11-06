@@ -142,11 +142,12 @@ function render(real) {
                 var link = document.createElement("A");
                 link.innerHTML = site[i].data[0];
                 if (!real) {
-                    button.setAttribute("onclick","edit(" + i + ");");
+                    link.setAttribute("onclick","edit(" + i + ");");
+                    link.setAttribute("href","#");
                 } else {
-                    button.setAttribute("href",site[i].data[1]);
+                    link.setAttribute("href",site[i].data[1]);
                 }
-                preview.appendChild(button);
+                preview.appendChild(link);
                 break;
         }
     }
