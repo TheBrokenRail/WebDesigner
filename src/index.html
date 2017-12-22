@@ -1,16 +1,18 @@
 <html>
   <body>
-    <div id="toolbox">
-      <button onclick="render();">Reload Site</button><br>
-      <button onclick="prompt(&quot;Exported HTML&quot;,exportToHTML());">Export To HTML</button><br><br>
-      <button onclick="add(0);">Text</button><br>
-      <button onclick="add(1);">Button</button><br>
-      <button onclick="add(2);">Image</button><br>
-      <button onclick="add(3);">Input</button><br>
-      <button onclick="add(4);">Link</button><br>
+    <div id="sidebar">
+      <div id="toolbox">
+        <button onclick="render();">Reload Site</button><br>
+        <button onclick="prompt(&quot;Exported HTML&quot;,exportToHTML());">Export To HTML</button><br><br>
+        <button onclick="add(0);">Text</button><br>
+        <button onclick="add(1);">Button</button><br>
+        <button onclick="add(2);">Image</button><br>
+        <button onclick="add(3);">Input</button><br>
+        <button onclick="add(4);">Link</button><br>
+      </div>
+      <div id="options"></div>
+      <div id="preview"></div>
     </div>
-    <div id="options"></div>
-    <div id="preview"></div>
   </body>
   <link rel="stylesheet" href="index.css"></link>
   <script src="index.js"></script>
