@@ -6,6 +6,7 @@
     width: 25%;
     background-color: #808080;
     overflow: auto;
+    padding: 8px;
 }
 
 #options {
@@ -16,6 +17,7 @@
     width: 25%;
     background-color: #C0C0C0;
     overflow: auto;
+    padding: 8px;
 }
 
 #preview {
@@ -25,4 +27,5 @@
     height: 100%;
     width: 75%;
     overflow: auto;
+    padding: 8px;
 }
