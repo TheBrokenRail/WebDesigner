@@ -16,7 +16,7 @@
     height: 100%;
     width: 25%;
     background-color: #808080;
-    overflow: auto;
+    overflow: hidden;
 }
 
 #options {
